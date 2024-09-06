@@ -1,13 +1,14 @@
 {
   "name": "task_1",
   "version": "1.0.0",
-  "description": "",
+  "description": "Task 1 - Webpack with config file",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Your Name",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^5.94.0",
@@ -17,8 +18,5 @@
     "jquery": "^3.7.1",
     "lodash": "^4.17.21"
   }
-  "scripts": {
-  "build": "webpack --mode production"
 }
 
-}
