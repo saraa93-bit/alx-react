@@ -1,14 +1,11 @@
-import { Map } from 'immutable';
+import { List } from 'immutable';
 
-// Create the initial map
-export const map = Map({
-  1: 'Liam',
-  2: 'Noah',
-  3: 'Elijah',
-  4: 'Oliver',
-  5: 'Jacob',
-  6: 'Lucas'
-});
+// Converts an array to an immutable List
+export function getListObject(array) {
+  return List(array);
+}
 
-// Create map2 by modifying values in map
-export const map2 = map.set(2, 'Benjamin').set(4, 'Oliver');
+// Appends an element to the immutable List
+export function addElementToList(list, element) {
+  return list.push(element);
+}
