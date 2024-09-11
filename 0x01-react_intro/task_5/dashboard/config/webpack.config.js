@@ -1,56 +1,47 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',
+  mode: "development",
+  devtool: "inline-source-map",
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: "bundle.js",
+    path: path.resolve("./dist"),
   },
-  mode: 'development',
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
     hot: true,
-    port: 8080,
+    contentBase: path.resolve("./dist"),
+    compress: true,
+    port: 8564,
+  },
+  performance: {
+    maxAssetSize: 1000000,
+    maxEntrypointSize: 1000000,
   },
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
       },
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
+          "file-loader",
           {
-            loader: 'file-loader',
-          },
-          {
-            loader: 'image-webpack-loader', // Add this loader for image optimization
+            loader: "image-webpack-loader",
             options: {
-              mozjpeg: {
-                progressive: true,
-              },
-              // Optimize PNG images
-              optipng: {
-                enabled: true,
-              },
-              // Enable/disable pngquant optimization
-              pngquant: {
-                quality: [0.65, 0.90],
-                speed: 4,
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              // Enable optimization for webp images
-              webp: {
-                quality: 75,
-              },
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
             },
           },
         ],
       },
     ],
   },
-  devtool: 'inline-source-map',
 };
