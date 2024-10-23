@@ -1,0 +1,101 @@
+.home-container-smart {
+  text-align: center;
+  padding: 20px;
+  max-height: 100vh;
+  overflow-y: scroll;
+  background: linear-gradient(135deg, #405d6c, #646366);
+  background-size: 200% 200%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.login-welcome {
+  color: rgb(191, 61, 81);
+  font-family:'Courier New', Courier, monospace;
+  font-size: 40px; /* تكبير حجم الخط */
+  font-weight: bold;
+  margin-top: -60px;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.login-welcome:hover {
+  transform: translateY(-5px);
+}
+
+.login-para {
+  color: rgb(226, 223, 224);
+  font-family:'Courier New', Courier, monospace;
+  font-size: 28px; /* تكبير حجم الخط */
+  margin-bottom: 20px;
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* زيادة المسافة بين العناصر */
+  flex-wrap: wrap;
+  margin: 40px 0; /* توسيع المساحة حول المعرض */
+}
+
+.image-item {
+  text-align: center;
+  width: 300px; /* تكبير عرض العنصر ليتناسب مع حجم الصورة والنص */
+  margin-bottom: 40px; /* زيادة المسافة السفلية */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.image-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-image {
+  width: 100%; /* ضمان أن الصورة تغطي كامل عرض العنصر */
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: translateY(-5px);
+}
+
+.image-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.image-item p {
+  color: rgb(227, 226, 226);
+  font-size: 24px; /* تكبير حجم النص */
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-top: 10px;
+}
+
+.login-button-home {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 80px; /* زيادة المسافة بين زر الـLogin والصور */
+  margin-bottom: 30px;
+  width: 25%;
+  font-size: 20px;
+}
+
+.footer {
+  margin-top: 50px;
+  font-size: 14px; /* تكبير حجم النص في الفوتر */
+  color: rgb(205, 207, 209);
+}
